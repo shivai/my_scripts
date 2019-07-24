@@ -1,17 +1,19 @@
 # About script
-This script moves docs from source db to destination db. First of all you should fill the source and destination server information like IP, port, and collection in script:
+This script moves docs from source db to destination db based on logout time. First of all you should fill the source and destination server information like IP, port, and collection in config file:
 ```
-src_mongo_host = "192.168.1.1:27019"
-src_collection = "old_collection"
+src_host = "192.168.1.1:27019"
+dst_host = "127.0.0.1:27019"
 src_db = "old_db"
-
-dst_mongo_host = "127.0.0.1:27019"
-dst_collection = "new_connection"
 dst_db = "new_db"
+
+src_collection = "old_collection"
+dst_collection = "new_connection"
+
 ```
-in this example we want to find the docs which are in a special date, now we should fill date filed in script:
+Also you should set logout time start and end:
+
 ```
-start_logout_time = datetime(2019, 6, 14, 0, 0, 0)
-end_logout_time = datetime(2019, 6, 18, 0, 0, 0)
+start = 2019, 6, 14, 0, 0, 0
+end = 2019, 6, 18, 0, 0, 0
 ```
 
